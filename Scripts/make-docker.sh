@@ -18,7 +18,7 @@ while IFS= read -d $'\0' -r dir; do
     echo $IFS
     svcname="$(basename "${dir}")"
     builddir="${dir}"
-    image="$REPO_PREFIX/$svcname:$TAG"
+    image="$REPO_PREFIX$svcname:$TAG"
     (
         cd "${builddir}"
         docker system prune -f 

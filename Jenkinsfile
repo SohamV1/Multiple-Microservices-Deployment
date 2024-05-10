@@ -4,7 +4,7 @@ pipeline {
         SCANNER_HOME = tool 'sonar-scanner'
         AWS_ACCOUNT_ID = credentials('ACCOUNT_ID')
         AWS_DEFAULT_REGION = 'us-east-1'
-        REPO_PREFIX = "407622020962.dkr.ecr.us-east-1.amazonaws.com/multiple-microservices-kubernetes-deployment"
+        REPO_PREFIX = "407622020962.dkr.ecr.us-east-1.amazonaws.com/"
     }
     stages {
         stage("Cleaning Workspace") {
