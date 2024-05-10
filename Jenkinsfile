@@ -58,7 +58,7 @@ pipeline {
             steps{
                 script{
                    dir('Scripts'){    
-                        sh 'sudo chmod +755 make-docker.sh && bash make-docker.sh'                        
+                        sh 'bash make-docker.sh'                        
                    }
                 }
             }
