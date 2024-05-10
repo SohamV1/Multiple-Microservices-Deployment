@@ -11,7 +11,7 @@ log() { echo "$1" >&2; }
 BUILD_NUMBER="${BUILD_NUMBER}"
 REPO_PREFIX="${REPO_PREFIX}"
 TAG=${BUILD_NUMBER}
-REPO_PREFIX=${REPO_PREFIX}"
+
 
 
 # read_manifests() {
@@ -38,7 +38,7 @@ edit_k8s() {
             echo "Skipping hidden directory: $svcname"
             continue
         fi
-        image="$REPO_PREFIX/$svcname:$TAG"
+        image="$REPO_PREFIX$svcname:$TAG"
         file="${SCRIPTDIR}/../kubernetes-manifests/${svcname}.yaml"
         sed -i "s|image:.*$svcname.*|image: ${image}|g" "$file"
         git add .
