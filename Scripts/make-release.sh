@@ -42,8 +42,8 @@ edit_k8s() {
         file="${SCRIPTDIR}/../kubernetes-manifests/${svcname}.yaml"
         sed -i "s|image:.*$svcname.*|image: ${image}|g" "$file"
         git add .
-        git commit -m "update in manifest files to ${TAG}"
-        git push origin master
+        git commit -m "updates manifest files to ${TAG} version"
+        git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
     done
 }
 
