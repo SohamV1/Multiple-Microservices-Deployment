@@ -3,9 +3,9 @@
 set -euo pipefail
 SCRIPTDIR="$(cd "$( dirname "$BASH_SOURCE[0]")" && pwd )"
 echo $SCRIPTDIR
-BUILD_NUMBER="{env.BUILD_NUMBER}"
+BUILD_NUMBER="${env.BUILD_NUMBER}"
 echo $BUILD_NUMBER
-REPO_PREFIX="{env.REPO_PREFIX}"
+REPO_PREFIX="${env.REPO_PREFIX}"
 echo $REPO_PREFIX
 log() { echo "$1" >&2; }
 
