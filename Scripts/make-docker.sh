@@ -1,13 +1,18 @@
 #!/bin/bash
-source ./.env
+
 set -euo pipefail
 SCRIPTDIR="$(cd "$( dirname "$BASH_SOURCE[0]")" && pwd )"
 echo $SCRIPTDIR
-
+BUILD_NUMBER="{env.BUILD_NUMBER}"
+echo $BUILD_NUMBER
+REPO_PREFIX="{env.REPO_PREFIX}"
+echo $REPO_PREFIX
 log() { echo "$1" >&2; }
 
-TAG="${TAG:?TAG env variable must be specified}"
-#REPO_PREFIX="${REPO_PREFIX:?REPO_PREFIX env variable must be specified}"
+TAG=${BUILD_NUMBER}
+echo $TAG
+REPO_PREFIX=${REPO_PREFIX}
+echo $REPO_PREFIX
 
 while IFS= read -d $'\0' -r dir; do
     echo $IFS

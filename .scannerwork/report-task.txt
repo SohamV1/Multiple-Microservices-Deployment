@@ -1,0 +1,6 @@
+projectKey=Multiple-Microservices-Deployment
+serverUrl=http://localhost:9000
+serverVersion=10.5.1.90531
+dashboardUrl=http://localhost:9000/dashboard?id=Multiple-Microservices-Deployment
+ceTaskId=f0f649f0-b653-48a8-83ad-c456360ddd7c
+ceTaskUrl=http://localhost:9000/api/ce/task?id=f0f649f0-b653-48a8-83ad-c456360ddd7c
