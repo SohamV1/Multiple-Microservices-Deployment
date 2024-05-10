@@ -17,10 +17,10 @@ echo $REPO_PREFIX
 while IFS= read -d $'\0' -r dir; do
     echo $IFS
     svcname="$(basename "${dir}")"
-    if [ $svcname == .* ]
-        then
-            echo "Skipping hidden directory"
-            continue
+    if [[ $svcname == .* ]]
+    then
+        echo "Skipping hidden directory: $svcname"
+        continue
     fi
     builddir="${dir}"
     image="$REPO_PREFIX$svcname:$TAG"
