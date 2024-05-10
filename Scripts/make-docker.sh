@@ -20,6 +20,10 @@ while IFS= read -d $'\0' -r dir; do
     builddir="${dir}"
     image="$REPO_PREFIX$svcname:$TAG"
     (
+        if [ $svcname == "cartservice" ] 
+        then
+            builddir="${dir}/src"
+        fi
         cd "${builddir}"
         docker system prune -f 
         docker container prune -f
