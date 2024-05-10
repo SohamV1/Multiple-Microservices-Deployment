@@ -63,5 +63,14 @@ pipeline {
                 }
             }
         }
+        stage("Update Deployment file"){
+            steps{
+                withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'GIT_USER_NAME', passwordVariable: 'GITHUB_TOKEN')]) {
+                    dir('Scripts'){
+                        sh 'bash make-release.sh'
+                    }
+                }
+            }
+        }
     }
 }
