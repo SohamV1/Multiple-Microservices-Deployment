@@ -35,7 +35,7 @@ while IFS= read -d $'\0' -r dir; do
         log "Building and pushing: ${image}"
         aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | docker login --username AWS --password-stdin "${REPO_PREFIX}"
         docker build -t "${svcname}" .
-        docker tag "${image}"
+        docker tag "$svcname" "${image}"
         docker push "${image}"
     )
 done < <(find "${SCRIPTDIR}/../src" -mindepth 1 -maxdepth 1 -type d -print0)
