@@ -44,6 +44,7 @@ edit_k8s() {
             continue
         fi
         image="$REPO_PREFIX$svcname:$TAG"
+        echo $image
         file="${SCRIPTDIR}/../kubernetes-manifests/${svcname}.yaml"
         sed -i "s|image:.*$svcname.*|image: ${image}|g" "$file"
         git add .
