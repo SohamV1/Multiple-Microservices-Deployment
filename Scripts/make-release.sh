@@ -49,7 +49,7 @@ edit_k8s() {
         sed -i "s|image:.*$svcname.*|image: ${image}|g" "$file"
     done
     cd ..
-    git add .
+    git add ../kubernetes-manifests/.
     git commit -m "updates manifest files to ${TAG} version"
     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
 }
