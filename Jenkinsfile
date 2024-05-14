@@ -4,7 +4,8 @@ pipeline {
         SCANNER_HOME = tool 'sonar-scanner'
         AWS_ACCOUNT_ID = credentials('ACCOUNT_ID')
         AWS_DEFAULT_REGION = 'us-east-1'
-        REPO_PREFIX = "407622020962.dkr.ecr.us-east-1.amazonaws.com/"
+        REPO_PREFIX = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/"
+        GIT_REPO="Multiple-Microservices-Deployment"
     }
     stages {
         stage("Cleaning Workspace") {
